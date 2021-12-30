@@ -1,5 +1,5 @@
 const mongoose= require('mongoose');
-mongoose.connect('mongodb://localhost/csv-reader');
+mongoose.connect(process.env.MONGODB_URL||'mongodb://localhost/csv-reader');
 const db= mongoose.connection;
 
 db.on('error',console.error.bind(console,'error in connecting to mongodb'));
