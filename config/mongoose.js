@@ -1,5 +1,7 @@
 const mongoose= require('mongoose');
-mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/csv-reader')
+// ||'mongodb://localhost/csv-reader'
+const DB= 'mongodb+srv://suppu:NWgCbwJeCYTac9g@cluster0.lwltz.mongodb.net/csvuploader?retryWrites=true&w=majority';
+mongoose.connect(DB)
 .then(()=>{console.log('db connected')})
 .catch((err)=>{console.log(err)});
 const db= mongoose.connection;
